@@ -37,10 +37,36 @@ Here's a breakdown of their role in inspecting traffic between Azure VMs:
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+Here are some high-level steps involved in configuring Network Security Groups (NSGs) and inspecting traffic between Azure Virtual Machines:
+
+**Step 1: Create or Select NSGs:**
+
+- If you don't have existing NSGs, create them.
+- Associate the NSGs with the appropriate subnets or network interfaces of your virtual machines. An NSG can be associated with a subnet or with a single NIC.
+
+**Step 2: Define Inbound and Outbound Rules:**
+
+- Inbound Rules: Control traffic entering the virtual machine. Define rules that allow or deny traffic based on source IP addresses, ports, protocols (TCP, UDP, ICMP), and other criteria.
+- Outbound Rules: Control traffic leaving the virtual machine. Define rules that allow or deny traffic based on destination IP addresses, ports, protocols, and other criteria.
+
+**Step 3: Inspect Traffic Flow:**
+
+- Analyze Network Security Group Logs: Monitor the NSG logs to track traffic flow and identify any security incidents or anomalies.
+- Use Azure Monitor: Utilize Azure Monitor to collect and analyze network traffic data, including NSG logs, for deeper insights and security monitoring.
+- Test Connectivity: Verify that the defined rules allow the expected traffic flow between your virtual machines.
+
+**Step 4: Optimize and Refine Rules:**
+
+- Review and update your NSG rules based on evolving security requirements and application needs.
+- Principle of Least Privilege: Follow the principle of least privilege, granting only the necessary permissions to each virtual machine.
+- Security Best Practices: Implement security best practices, such as using deny-by-default rules and regularly reviewing and updating your security configurations.
+
+**Additional Considerations:**
+
+- Virtual Network Peering: If you need communication between virtual machines in different subnets or virtual networks, configure virtual network peering and adjust NSG rules accordingly.
+- Azure Firewall: Consider using Azure Firewall for more advanced security features, such as threat intelligence-based filtering and web application firewall (WAF).
+
+Following these steps and adhering to security best practices, you can effectively secure traffic flow between your Azure Virtual Machines using Network Security Groups.
 
 <h2>Actions and Observations</h2>
 
